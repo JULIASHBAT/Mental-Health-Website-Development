@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Tailwind</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  
+  <body class="dark:bg-slate-800">
+    <div class="max-w-[1000px] mx-auto h-[100vh] flex flex-col gap-2 p-2">
+      <div class="p-4 bg-slate-300 flex justify-between">
+        <div class="flex justify-start gap-4 ">
+          <a href="#" class="font-bold hover:underline text-xl">Home</a>
+          <a href="#" class="font-bold hover:underline text-xl">Projects</a>
+          <a href="#" class="font-bold hover:underline text-xl">About</a>
+        </div>
+        <button id="btnThemeMode" class=" border border-slate-700 rounded py-1 px-3">Dark</button>
+      </div>
+      <div class="p-4 grow border border-slate-600" id="content">
+        <h1 class="text-4xl font-bold">Home</h1>
+        <p class="text-xl">
+          mohamed
+          egbaria
+          mohamedegbaria
+
+
+
+        </p>
+
+
+      </div>
+      <div class="p-4 text-center bg-slate-300">footer</div>
+    </div>
+    <script type="module" src="/main.js"></script>
+
+    <script>
+      // custom config for the MTW app 
+      const mtwAppConfig = {
+          border: true // app border in the MTW page                    
+      }
+
+      ///////////////////////////////////////////////////////
+      // implement this functions in order to use private API        
+      const sendPrivateApiRequest = async () => {
+          // your code here:
+          // sendRequestToParent({ cat: 'getAssets' })
+      }        
+
+      const acceptPrivateApiResponse = async (data) => {
+          // process received data here:
+          // console.log(data)
+      }
+
+      // use this in order to send on document load
+      document.addEventListener('DOMContentLoaded', () => {
+          // your code here:
+          //sendRequestToParent({ method: 'getAssets' })
+      })
+
+  </script>
+  <script src="https://morethanwallet.com/appstore/index.js"></script>
+
+
+  </body>
+</html>
