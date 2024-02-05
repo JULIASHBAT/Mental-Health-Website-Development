@@ -6,27 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Tailwind</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Custom styles */
+       .bg-image-light {
+          background-image: url('./images/backgroundL.jpg');
+          background-size: auto;
+          background-position: center;
+      }
+      .dark .bg-image-light {
+          background-image: url('./images/backgroundD.jpg');
+          background-size: 60%;
+          background-position: center;
+      }
+
+  </style>
+
   </head>
 
   
-  <body class="dark:bg-slate-800">
-    <div class="max-w-[1000px] mx-auto h-[100vh] flex flex-col gap-2 p-2">
+  <body class="dark:bg-image-light bg-image-light ">
+    <div class="max-w mx-auto h-[100vh] flex flex-col gap-2 p-2">
       <div class="p-4 bg-slate-300 flex justify-between">
         <div class="flex justify-start gap-4 ">
-          <a href="#" class="font-bold hover:underline text-xl">Home</a>
+          <a href="" class="font-bold hover:underline text-xl">Home</a>
           <a href="#" class="font-bold hover:underline text-xl">Projects</a>
           <a href="#" class="font-bold hover:underline text-xl">About</a>
+          <a href="#" class="font-bold hover:underline text-xl">Contact</a>
+
         </div>
         <button id="btnThemeMode" class=" border border-slate-700 rounded py-1 px-3">Dark</button>
       </div>
+
       <div class="p-4 grow border border-slate-600" id="content">
-        <h1 class="text-4xl font-bold">Home</h1>
-        <p class="text-xl">
-          mohamed
-          egbaria
-          mohamedegbaria
-
-
+        <h1 class="text-4xl font-bold">home</h1>
+        <p class="text-xl" id="htmlpages">
+          Content from another HTML file will appear here.
 
         </p>
 
