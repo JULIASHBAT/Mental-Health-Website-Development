@@ -1,15 +1,17 @@
 const pages = {
     "home": "white",
-    "projects": "lightblue",
+    "self-helping": "lightblue",
     "about": "lightgreen",
-    "contact": "lightred"
+    "professional-help": "lightred",
+    "Stress-tools":"red"
 
 };
 const pagesHTML = {
     "home": "home.html",
-    "projects": "projects.html",
+    "self-helping": "self-helping.html",
     "about": "about.html", 
-    "contact": "contact.html"
+    "professional-help": "Professional-help.html",
+    "stress-tools":"Stress-tools.html"
 };
 
 
@@ -17,7 +19,7 @@ const pagesHTML = {
 const showPage = (page => {
     // Check if the page has an associated color and change the background
     // if (pages[page]) {
-     document.querySelector("h1").innerText = page;
+    //  document.querySelector("h1").innerText = page;
     //     document.querySelector('#content').style.backgroundColor = pages[page];
     //     console.log(pages[page]);
     // } else {
@@ -47,11 +49,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("btnThemeMode").innerText = document.documentElement.classList.contains("dark") ? "Light" : "Dark";
     });
 
-
-    
+    document.getElementById("menuBtn").addEventListener("click", function() {
+        var menu = document.getElementById("menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+        } else {
+            menu.classList.add("hidden");
+        }
+    });
     document.querySelectorAll("a").forEach(function(el) {
         el.addEventListener("click", function() {
-            const pageName = el.innerText.toLocaleLowerCase();
+            const pageName = el.innerText.toLowerCase();
+            console.log(1121+pageName);
             showPage(pageName);
         });
     });

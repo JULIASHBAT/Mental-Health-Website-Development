@@ -1,82 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Tailwind</title>
+    <title>Mental Health Support App</title>
     <link rel="stylesheet" href="/style.css" />
-    <style>
-      /* Custom styles */
-       .bg-image-light {
-          background-image: url('./images/backgroundL.jpg');
-          background-size: auto;
-          background-position: center;
-      }
-      .dark .bg-image-light {
-          background-image: url('./images/backgroundD.jpg');
-          background-size: 60%;
-          background-position: center;
-      }
-
-  </style>
-
-  </head>
 
   
-  <body class="dark:bg-image-light bg-image-light ">
+
+</head>
+<body class="dark:bg-gray-700 bg-white">
+  
     <div class="max-w mx-auto h-[100vh] flex flex-col gap-2 p-2">
-      <div class="p-4 bg-slate-300 flex justify-between">
-        <div class="flex justify-start gap-4 ">
-          <a href="" class="font-bold hover:underline text-xl">Home</a>
-          <a href="#" class="font-bold hover:underline text-xl">Projects</a>
-          <a href="#" class="font-bold hover:underline text-xl">About</a>
-          <a href="#" class="font-bold hover:underline text-xl">Contact</a>
+      
+        <div class="p-4 bg-slate-300 flex justify-between">
+        
+          <button id="menuBtn" class="md:hidden block border border-slate-700 rounded py-1 px-3">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+        <!-- Menu hidden by default, shown as a flex column on toggle -->
+        <div id="menu" class="absolute left-2 top-[8%] hidden   bg-slate-300 md:flex md:flex-row md:relative md:top-auto md:w-auto">
+            <a href="" class="font-bold hover:underline text-xl p-2 block">Home</a>
+            <a href="#" class="font-bold hover:underline text-xl p-2 block">Self-helping</a>
+            <a href="#" class="font-bold hover:underline text-xl p-2 block">Professional-help</a>
+            <a href="#" class="font-bold hover:underline text-xl p-2 block">Stress-tools</a>
+            <a href="#" class="font-bold hover:underline text-xl p-2 block" id="51">About</a>
 
         </div>
-        <button id="btnThemeMode" class=" border border-slate-700 rounded py-1 px-3">Dark</button>
-      </div>
+            <button id="btnThemeMode" class=" border border-slate-700 rounded py-1 px-3">Dark</button>
+        </div>
+        
+        <!-- Hero Section -->
+        <div id="htmlpages">
+        <div class="  p-4 text-black py-20 px-4 text-center">
+          <h1 class="text-4xl font-bold mb-4">Welcome to Our Mental Health Support App</h1>
+          <p class="text-lg">Your source for self-help guides, stress management tools, and professional help connections.</p>
+          <a href="#content" class="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">Learn More</a>
+        </div>
 
-      <div class="p-4 grow border border-slate-600" id="content">
-        <h1 class="text-4xl font-bold">home</h1>
-        <p class="text-xl" id="htmlpages">
-          Content from another HTML file will appear here.
+        <!-- Features Section -->
+        <div class=" py-12 px-4  text-center" id="content">
+            <h2 class="text-3xl font-bold mb-8">Our Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-100 border border-blue-300 text-left p-5 rounded-lg ">
+                    <i class="fas fa-book-open text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Self-Help Guides</h3>
+                    <p>Access a library of self-help resources to aid in your mental wellness journey.</p>
+                </div>
+                <div class="bg-blue-100 border border-blue-300 text-left p-5 rounded-lg">
+                    <i class="fas fa-heartbeat text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Stress Management Tools</h3>
+                    <p>Utilize tools and techniques to manage stress and promote relaxation.</p>
+                </div>
+                <div class="bg-blue-100 border border-blue-300 text-left p-5 rounded-lg">
+                    <i class="fas fa-user-md text-4xl text-red-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Professional Help Connections</h3>
+                    <p>Connect with mental health professionals for personalized support and guidance.</p>
+                </div>
+            </div>
+        </div>
 
-        </p>
+        <!-- Self-Help Resources -->
+        <div class=" py-12 px-4">
+          <h2 class="text-3xl font-bold mb-4">Self-Help Resources</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-green-200 border border-green-300 p-4 rounded-lg">
+                  <h3 class="text-xl font-bold mb-2">Breathing Exercises</h3>
+                  <p>Learn simple yet effective breathing techniques to reduce stress and anxiety.</p>
+                  <a href="https://www.healthline.com/health/breathing-exercise#belly-breathing" target="_blank" class="text-blue-500 hover:underline">Explore</a>
+              </div>
+              <div class=" bg-green-200 border border-green-300 p-4 rounded-lg">
+                  <h3 class="text-xl font-bold mb-2">Mindfulness Meditation</h3>
+                  <p>Practice mindfulness meditation to cultivate present-moment awareness and calmness.</p>
+                  <a href="https://www.mindful.org/meditation/mindfulness-getting-started/" target="_blank" class="text-green-500 hover:underline">Explore</a>
+              </div>
+              <div class=" bg-green-200 border border-green-300 p-4 rounded-lg">
+                  <h3 class="text-xl font-bold mb-2">Journaling Prompts</h3>
+                  <p>Unlock your thoughts and emotions through guided journaling prompts for self-reflection.</p>
+                  <a href="https://psychcentral.com/blog/ready-set-journal-64-journaling-prompts-for-self-discovery" target="_blank" class="text-red-500 hover:underline">Explore</a>
+              </div>
+          </div>
+        </div>
 
-
-      </div>
-      <div class="p-4 text-center bg-slate-300">footer</div>
+        <!-- Call-to-Action Section -->
+        <div class=" py-12 px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Take Control of Your Mental Health?</h2>
+            <p class="mb-6">Download our app now and start your journey towards improved mental wellness.</p>
+            <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded">Comming soon!!</a>
+        </div>
     </div>
+       <!-- Footer -->
+        <div class="p-4 text-center bg-gray-900 text-white">
+          <div class="max-w-md mx-auto">
+              <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+              <p class="mb-4">For any inquiries or support, please feel free to reach out to us.</p>
+              <p>Email: MentalHealthSupport@example.com</p>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
     <script type="module" src="/main.js"></script>
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-      // custom config for the MTW app 
-      const mtwAppConfig = {
-          border: true // app border in the MTW page                    
-      }
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
 
-      ///////////////////////////////////////////////////////
-      // implement this functions in order to use private API        
-      const sendPrivateApiRequest = async () => {
-          // your code here:
-          // sendRequestToParent({ cat: 'getAssets' })
-      }        
+        ///////////////////////////////////////////////////////
+        // implement this functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }
 
-      const acceptPrivateApiResponse = async (data) => {
-          // process received data here:
-          // console.log(data)
-      }
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
 
-      // use this in order to send on document load
-      document.addEventListener('DOMContentLoaded', () => {
-          // your code here:
-          //sendRequestToParent({ method: 'getAssets' })
-      })
-
-  </script>
-  <script src="https://morethanwallet.com/appstore/index.js"></script>
-
-
-  </body>
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            //sendRequestToParent({ method: 'getAssets' })
+        })
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
 </html>
