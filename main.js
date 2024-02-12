@@ -17,6 +17,8 @@ const pagesHTML = {
 
 
 const showPage = (page => {
+//
+
     // Check if the page has an associated color and change the background
     // if (pages[page]) {
     //  document.querySelector("h1").innerText = page;
