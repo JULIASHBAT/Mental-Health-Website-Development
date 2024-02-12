@@ -9,7 +9,6 @@ for /f "tokens=1-3 delims=/" %%a in ("%date%") do (
     set "month=%%b"
     set "year=%%c"
 )
-
 :: Formatted date
 set "formattedDate=%day%-%month%-%year:~-2%"
 
