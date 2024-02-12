@@ -8,6 +8,6 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://marysoul99.github.io/A14/
+git remote add origin https://github.com/marysoul99/A14.git
 git push -u origin main
 
