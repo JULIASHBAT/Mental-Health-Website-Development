@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="flex justify-center items-center w-full max-w-4xl mx-auto">
+        <div class="w-1/2 p-8 bg-blue-100 border border-blue-300 rounded-lg shadow-md">
+            <h2 class="mb-6 text-center text-2xl font-bold">Sign Up</h2>
+            <form id="signUpForm" action="#">
+                <div class="mb-4">
+                    <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="fullname" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your full name">
+                </div>
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your username">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your email">
+                </div>
+                <div class="mb-4">
+                    <label for="phonenumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" id="phonenumber" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your phone number">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Create a password">
+                </div>
+                <div class="mb-4">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Confirm your password">
+                </div>
+                <button id="regis-button" type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign Up</button>
+            </form>
+        </div>
+ 
+         <div class="w-1/2 flex justify-center items-center p-4">
+            <video class="rounded-lg" autoplay loop muted playsinline>
+                <source src="./images/mentalhelthvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>

@@ -10,3 +10,10 @@ module.exports = {
     require("@tailwindcss/aspect-ratio")
   ],
 };
+// vite.config.js
+export default {
+  server: {
+    open: '/about.html', // Replace with the actual path of the page you want to open
+  },
+};
+

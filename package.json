@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/marysoul99/A14.git",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

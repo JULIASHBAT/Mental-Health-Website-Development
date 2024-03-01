@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head> 
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="flex w-full max-w-4xl mx-auto">
+       
+        <div class="w-1/2 p-8 bg-blue-100 border border-blue-300 rounded-lg shadow-md my-auto mx-0">
+            <h2 class="mb-6 text-center text-2xl font-bold">Login</h2>
+            <form id="loginForm" action="#">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your username">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" placeholder="Your password">
+                </div>
+                <button id="submitButton" type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Log in</button>
+            </form>
+        </div>
+         <div class="w-1/2 flex justify-center items-center p-4">
+            <video class="rounded-lg" autoplay loop muted playsinline>
+                <source src="./images/mentalhelthvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>

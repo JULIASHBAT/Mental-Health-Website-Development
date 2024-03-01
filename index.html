@@ -6,46 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mental Health Support App</title>
     <link rel="stylesheet" href="/style.css" />
-
-  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 </head>
-<body class="dark:bg-gray-700 bg-white">
+<body class="dark:bg-gray-900 bg-white">
+  
   
     <div class="max-w mx-auto h-[100vh] flex flex-col gap-2 p-2">
-      
-        <div class="p-4 bg-slate-300 flex justify-between">
-        
-          <button id="menuBtn" class="md:hidden block border border-slate-700 rounded py-1 px-3">
+
+     <!-- ************************header************************ -->
+
+        <div class="p-4 dark:bg-white bg-slate-900 flex justify-between">
+          <button id="menuBtn" class="md:hidden block border border-slate-900 rounded py-1 px-3">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
         <!-- Menu hidden by default, shown as a flex column on toggle -->
-        <div id="menu" class="absolute left-2 top-[4%] hidden   bg-slate-300 md:flex md:flex-row md:relative md:top-auto md:w-auto">
-            <a href="" class="font-bold hover:underline text-xl p-2 block">Home</a>
-            <a href="#" class="font-bold hover:underline text-xl p-2 block">Self-helping</a>
-            <a href="#" class="font-bold hover:underline text-xl p-2 block">Professional-help</a>
-            <a href="#" class="font-bold hover:underline text-xl p-2 block">Stress-tools</a>
-            <a href="#" class="font-bold hover:underline text-xl p-2 block" id="51">About</a>
+        <div id="menu" class="absolute left-2 top-[4%] hidden  md:flex md:flex-row md:relative md:top-auto md:w-auto">
 
+            <a href="#" class="font-bold hover:underline text-xl p-2  block text-white dark:text-slate-900" id="HomePage">Home</a>
+
+            <!-- login/signup -->
+            <div class="font-bold text-xl p-2 block text-white dark:text-slate-900 space-x-2" id="login-signuptitle">
+              <a href="#" class=" hover:underline">Sign-up</a>
+              <a href="#" class=" hover:underline">Log-In</a>
+            </div>
+            
+
+            <!-- admin action -->
+            <div class="hidden font-bold text-xl p-2  text-white dark:text-slate-900 space-x-2 " id="adminActions">
+              <a href="#" class="  hover:underline ">Dashboard</a>
+              <a href="#" class="  hover:underline" >Users</a>
+            </div>
+            
+            <!-- user actions -->
+              <div class="hidden  font-bold  text-xl p-2  text-white dark:text-slate-900  space-x-2" id="userActions">
+                <a href="#" class="hover:underline">Self-help</a>
+                <a href="#" class="hover:underline">Stress-MangTools</a>
+                <a href="#" class="hover:underline">Pro-helpContact</a>
+                <a href="#" class="hover:underline">Support-groups</a>
+                <a href="#" class="hover:underline">Vip-groups</a>
+              </div>
+          <a href="#" class="font-bold hover:underline text-xl p-2 block text-white dark:text-slate-900 " >About</a>
         </div>
-            <button id="btnThemeMode" class=" border border-slate-700 rounded py-1 px-3">Dark</button>
-        </div>
-        
-        <!-- Hero Section -->
+       
+        <div class="space-x-2">
+          
+             <!-- Dropdown button -->
+             <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-bold py-2 px-4 rounded-full" type="button">
+              <!-- Account icon from Font Awesome -->
+              <i class="fas fa-user"></i>
+            </button>
+          <!--************* the button for dark and light mood! *******************-->
+               <button id="btnThemeMode" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200  font-bold py-2 px-4 rounded-full">
+                   <i class="fas fa-sun"></i> 
+               </button>
+               
+       </div>
+</div>
+<!-- ************************body************************ -->
+        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg  shadow w-44 dark:bg-white absolute top-[80px] right-5">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-600" aria-labelledby="dropdownDefaultButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+              </li>
+              <li>
+                <a onclick="confirmLogout()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" id="logoutLink">Log out</a>
+              </li>
+            </ul>
+          </div>
+
         <div id="htmlpages">
         <div class="  p-4 text-black py-20 px-4 text-center">
-          <h1 class="text-4xl font-bold mb-4">Welcome to Our Mental Health Support App</h1>
-          <p class="text-lg">Your source for self-help guides, stress management tools, and professional help connections.</p>
+          <h1 class="text-4xl font-bold mb-4  dark:text-white">Welcome to Our Mental Health Support App</h1>
+          <p class="text-lg dark:text-white">Your source for self-help guides, stress management tools, and professional help connections.</p>
           <a href="#content" class="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">Learn More</a>
+
+          <div class="flex space-x-5 items-end mt-8">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded" id="logintitle1">Login</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded" id="signuptitle1">Sign Up</button>
+        </div>
         </div>
 
         <!-- Features Section -->
         <div class=" py-12 px-4  text-center" id="content">
-            <h2 class="text-3xl font-bold mb-8">Our Features</h2>
+            <h2 class="text-3xl font-bold mb-8 dark:text-white">Our Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-blue-100 border border-blue-300 text-left p-5 rounded-lg ">
                     <i class="fas fa-book-open text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Self-Help Guides</h3>
+                    <h3 class="text-xl font-bold mb-2 ">Self-Help Guides</h3>
                     <p>Access a library of self-help resources to aid in your mental wellness journey.</p>
                 </div>
                 <div class="bg-blue-100 border border-blue-300 text-left p-5 rounded-lg">
@@ -63,7 +117,7 @@
 
         <!-- Self-Help Resources -->
         <div class=" py-12 px-4">
-          <h2 class="text-3xl font-bold mb-4">Self-Help Resources</h2>
+          <h2 class="text-3xl font-bold mb-4 dark:text-white">Self-Help Resources</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div class="bg-green-200 border border-green-300 p-4 rounded-lg">
                   <h3 class="text-xl font-bold mb-2">Breathing Exercises</h3>
@@ -85,13 +139,13 @@
 
         <!-- Call-to-Action Section -->
         <div class=" py-12 px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Take Control of Your Mental Health?</h2>
-            <p class="mb-6">Download our app now and start your journey towards improved mental wellness.</p>
+            <h2 class="text-3xl font-bold mb-4 dark:text-white">Ready to Take Control of Your Mental Health?</h2>
+            <p class="mb-6 dark:text-white">Download our app now and start your journey towards improved mental wellness.</p>
             <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded">Comming soon!!</a>
         </div>
     </div>
-       <!-- Footer -->
-        <div class="p-4 text-center bg-gray-900 text-white">
+       <!-- **********Footer************ -->
+        <div class="p-4 text-center bg-gray-900 dark:bg-white  text-white dark:text-gray-900 my-[auto]">
           <div class="max-w-md mx-auto">
               <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
               <p class="mb-4">For any inquiries or support, please feel free to reach out to us.</p>
@@ -102,7 +156,7 @@
     </div>
 
     <!-- Scripts -->
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="../main.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         // custom config for the MTW app 
@@ -131,7 +185,6 @@
     <script src="https://morethanwallet.com/appstore/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-
 
 </body>
 </html>
