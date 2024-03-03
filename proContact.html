@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doctor List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    help pro contacts!3
+
+    <div class="container mx-auto mt-8 p-8">
+        <!-- User Information -->
+        <div class="mb-4">
+            <p>Welcome, <span id="userName"></span>!</p>
+            <p>This page is designed to help you connect with nearby doctors. For professional assistance, please refer to the list below. In case of an emergency, don't hesitate to call for immediate help.</p>
+            <p>Emergency hotline: <strong>911</strong></p>
+        </div>
+
+        <!-- Doctor Table -->
+        <div class="shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+            <table class="min-w-full" id="doctorstable">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Doctor Name</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Clinic Name</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Email</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Phone Number</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Doctors' information will be dynamically inserted here from the script file! -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </body>
+
 </html>

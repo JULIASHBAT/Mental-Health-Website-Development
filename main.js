@@ -5,6 +5,7 @@ const adminActions=document.getElementById("adminActions");
 const userActions=document.getElementById("userActions");
 const HomePage=document.getElementById("HomePage");
 const dropdownbut=document.getElementById("dropdown");
+const doctorsList=[];
 
 const pages = {
     "home": "white",
@@ -80,7 +81,16 @@ function loadExternalHTML(pageUrl) {
                 console.log(user.id);
                 fetchUserDetailsById(user.id);
             }
+            if(pageUrl.includes("proContact.html")){
+                for(let i=0;i<doctorsList.length;i++){
+                    if(user.location!=doctorsList[i].location )
+                    doctorsList.pop(doctorsList[i]);
+                }
+                console.log(doctorsList)
+                renderDoctorsTable(doctorsList);
+            }
 
+            
             // After loading the HTML, attach a listener for the login form
             const loginForm = container.querySelector('#loginForm');
             if (loginForm) { attachLoginFormListener(loginForm); }
@@ -98,10 +108,16 @@ let usersArray = []; //users array to save the external data insade it!
 
 fetch('https://raw.githubusercontent.com/Mohameed7993/Usersfakedata_json/master/users.json')
   .then(response => response.json())
-  .then(data => {usersArray = data; 
+  .then(data => {usersArray = data;
 // Assign the fetched data to the array
+
+for(let i=0;i<usersArray.length;i++){
+    if((usersArray[i].role>5) && (usersArray[i].role<10)){
+     doctorsList.push(usersArray[i]);}
+}
     console.log("Users data loaded successfully");
     console.log(data)
+    console.log(doctorsList)
   })
   .catch(error => console.error('Failed to fetch data:', error));
 
@@ -152,6 +168,29 @@ function fetchUserDetailsById(userId) {
 
 /********end*****************customer more details!*****************************/
 
+
+/********start********doctortable render in the userpage!******************/
+function renderDoctorsTable(doctorsData) {
+    console.log(user.fullname)
+    const doctorsTableBody = document.querySelector('tbody');
+    // Clear existing rows
+    doctorsTableBody.innerHTML = '';
+
+    // Render each doctor as a table row
+    doctorsData.forEach(doctor => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td class="px-6 py-4 border-b border-gray-300">${doctor.fullname}</td>
+            <td class="px-6 py-4 border-b border-gray-300">${doctor.clinicName}</td>
+            <td class="px-6 py-4 border-b border-gray-300">${doctor.email}</td>
+            <td class="px-6 py-4 border-b border-gray-300">${doctor.phone}</td>
+            <td class="px-6 py-4 border-b border-gray-300"></td>
+        `;
+
+        doctorsTableBody.appendChild(row);
+    });
+}
+/********end********doctortable render in the userpage!******************/
 
 
 /********start********Userdable render in the adminpage!******************/
@@ -232,6 +271,7 @@ function fetchUserDetailsById(userId) {
 
 ////start/////////////////login attach lisner!////////////////////////
 function attachLoginFormListener(formElement) {
+    
     const submitButton = document.getElementById('submitButton'); 
     submitButton.disabled = true; //disabeld the submit button at the bigging
 
