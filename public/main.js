@@ -5,6 +5,7 @@ const adminActions=document.getElementById("adminActions");
 const userActions=document.getElementById("userActions");
 const HomePage=document.getElementById("HomePage");
 const dropdownbut=document.getElementById("dropdown");
+const menu=document.getElementById("menu")
 const doctorsList=[];
 
 const pages = {
@@ -42,8 +43,9 @@ const pagesHTML = {
 const showPage = (page => {
     // Check if the page has an associated HTML file and load it
     if (pagesHTML[page]) {
-        console.log(pagesHTML[page]);
         loadExternalHTML(pagesHTML[page]);
+        if(menu.classList.contains('hidden')){}
+        else menu.classList.add('hidden')
     } else {
         console.log("No HTML file found for ", page);
     }
