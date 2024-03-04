@@ -28,7 +28,7 @@ const pagesHTML = {
     "self-help": "public/selfhelp.html",
     "about": "about.html", 
     "sign-up": "public/Sign-up.html",
-    "log-in":"Log-In.html",
+    "log-in":"log-in.html",
     "dashboard":"public/Dashboard.html",
     "doctors":"public/doctors.html",
     "customers":"public/customers.html",
