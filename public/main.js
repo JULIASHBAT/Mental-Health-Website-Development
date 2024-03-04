@@ -29,7 +29,7 @@ const pagesHTML = {
     "about": "about.html", 
     "sign-up": "sign-up.html",
     "log-in":"log-in.html",
-    "dashboard":"dashboard.html",
+    "dashboard":"Dashboard.html",
     "doctors":"doctors.html",
     "customers":"customers.html",
     "users":"usersadmin.html",
