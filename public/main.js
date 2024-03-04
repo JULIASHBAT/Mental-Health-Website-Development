@@ -24,24 +24,25 @@ const pages = {
 };
 
 const pagesHTML = {
-    "home": "home.html",
-    "self-help": "selfhelp.html",
-    "about": "about.html", 
-    "sign-up": "Sign-up.html",
-    "log-in":"Log-In.html",
-    "dashboard":"Dashboard.html",
-    "doctors":"doctors.html",
-    "customers":"customers.html",
-    "users":"usersadmin.html",
-    "stress-mangtools":"stressTools.html",
-    "pro-helpcontact":"proContact.html",
-    "support-groups":"supportGroups.html",
-    "vip-groups":"Vipgroups.html"
+    "home": "public/home.html",
+    "self-help": "public/selfhelp.html",
+    "about": "public/about.html", 
+    "sign-up": "public/Sign-up.html",
+    "log-in":"public/Log-In.html",
+    "dashboard":"public/Dashboard.html",
+    "doctors":"public/doctors.html",
+    "customers":"public/customers.html",
+    "users":"public/usersadmin.html",
+    "stress-mangtools":"public/stressTools.html",
+    "pro-helpcontact":"public/proContact.html",
+    "support-groups":"public/supportGroups.html",
+    "vip-groups":"public/Vipgroups.html"
 };
 
 const showPage = (page => {
     // Check if the page has an associated HTML file and load it
     if (pagesHTML[page]) {
+        console.log(pagesHTML[page]);
         loadExternalHTML(pagesHTML[page]);
     } else {
         console.log("No HTML file found for ", page);
@@ -72,7 +73,7 @@ function loadExternalHTML(pageUrl) {
         .then(html => {
             const container = document.getElementById('htmlpages');
             container.innerHTML = html;
-
+            console.log(html);
             // After loading the HTML, check if it's the usersadmin.html page and then call renderUserTable
             if (pageUrl.includes("usersadmin.html")) {
                 renderUserTable(usersArray);
@@ -90,7 +91,6 @@ function loadExternalHTML(pageUrl) {
                 renderDoctorsTable(doctorsList);
             }
 
-            
             // After loading the HTML, attach a listener for the login form
             const loginForm = container.querySelector('#loginForm');
             if (loginForm) { attachLoginFormListener(loginForm); }
@@ -390,7 +390,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 }  else {
                     if(pageName==='home')
                        window.location.reload()
-                    else showPage(pageName);}
+                    else {
+                        console.log(pageName)
+                        showPage(pageName);}
+                }
     });
     });
     
