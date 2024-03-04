@@ -24,19 +24,19 @@ const pages = {
 };
 
 const pagesHTML = {
-    "home": "public/home.html",
-    "self-help": "public/selfhelp.html",
+    "home": "home.html",
+    "self-help":"selfhelp.html",
     "about": "about.html", 
-    "sign-up": "public/Sign-up.html",
+    "sign-up": "sign-up.html",
     "log-in":"log-in.html",
-    "dashboard":"public/Dashboard.html",
-    "doctors":"public/doctors.html",
-    "customers":"public/customers.html",
-    "users":"public/usersadmin.html",
-    "stress-mangtools":"public/stressTools.html",
-    "pro-helpcontact":"public/proContact.html",
-    "support-groups":"public/supportGroups.html",
-    "vip-groups":"public/Vipgroups.html"
+    "dashboard":"dashboard.html",
+    "doctors":"doctors.html",
+    "customers":"customers.html",
+    "users":"usersadmin.html",
+    "stress-mangtools":"stressTools.html",
+    "pro-helpcontact":"proContact.html",
+    "support-groups":"supportGroups.html",
+    "vip-groups":"Vipgroups.html"
 };
 
 const showPage = (page => {
