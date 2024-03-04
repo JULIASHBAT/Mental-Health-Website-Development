@@ -73,7 +73,6 @@ function loadExternalHTML(pageUrl) {
         .then(html => {
             const container = document.getElementById('htmlpages');
             container.innerHTML = html;
-            console.log(html);
             // After loading the HTML, check if it's the usersadmin.html page and then call renderUserTable
             if (pageUrl.includes("usersadmin.html")) {
                 renderUserTable(usersArray);
